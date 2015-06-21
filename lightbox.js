@@ -134,7 +134,12 @@ lightBox.prototype.putAllImages = function () {
 		}, 100*this.elements.length);
 
 		//put new slide
-		this.slidesBox.innerHTML += '<div class="lightbox-slide" style="left:'+i*100+'%"><img src="'+this.elements[i].dataset.big+'"><div class="lightbox-caption">'+this.elements[i].dataset.caption+'</div></div>';
+		if(this.elements[i].dataset.caption != undefined && this.elements[i].dataset.caption != "") {
+			this.caption = '<div class="lightbox-caption">'+this.elements[i].dataset.caption+'</div>';
+		} else {
+			this.caption = "";
+		}
+		this.slidesBox.innerHTML += '<div class="lightbox-slide" style="left:'+i*100+'%"><img src="'+this.elements[i].dataset.big+'">'+this.caption+'</div>';
 		
 		if(i+1 === len) {
 			if(this.value = this.left) {
