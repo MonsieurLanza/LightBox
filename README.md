@@ -5,18 +5,18 @@ LightBox jest to prosty plugin galeri napisany w czystym JavaScript.
 
 ### Jak używać
 
-1. Dodaj style CSS i plik JavaScript do swojego pliku
+Dodaj style CSS i plik JavaScript do swojego pliku
 ```
 <link rel="stylesheet" type="text/css" href="css/lightbox.css">
 <script type="text/javascript" src="js/lightbox.js"></script>
 ```
-2. Wstaw obrazy w takim stylu jak poniżej (caption można pominać)
+Wstaw obrazy w takim stylu jak poniżej (caption można pominać)
 ```
 <div data-big="big/ts_img1.jpg" class="lightbox">
 	<img src="small/ts_img1.jpg" alt="small">
 </div>
 ```
-3. Odpal LightBox'a
+Odpal LightBox'a
 ```
 document.addEventListener("DOMContentLoaded", function() {
 	var init = new lightBox();
@@ -27,18 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
 LightBox is a simple gallery plugin written in pure JavaScript. 
 
 ### How to use
-1. Add CSS file and JS file
+Add CSS file and JS file
 ```
 <link rel="stylesheet" type="text/css" href="css/lightbox.css">
 <script type="text/javascript" src="js/lightbox.js"></script>
 ```
-2. Put your images as below (caption is not required)
+Put your images as below (caption is not required)
 ```
 <div data-big="big/ts_img1.jpg" class="lightbox">
 	<img src="small/ts_img1.jpg" alt="small">
 </div>
 ```
-3. Run LightBox
+Run LightBox
 ```
 document.addEventListener("DOMContentLoaded", function() {
 	var init = new lightBox();
