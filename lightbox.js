@@ -74,17 +74,30 @@ lightBox.prototype.initLightBox = function () {
 						this.slideLeft();
 					}.bind(this));
 					
+					window.addEventListener("keydown", function(e) {
+						if(e.keyCode === 27) {
+							//escape
+							this.close();
+						}
+						
+						if(e.keyCode === 39) {
+							//right
+							this.slideRight();
+						}
+						
+						if(e.keyCode === 37) {
+							//left
+							this.slideLeft();
+						}
+					}.bind(this));
+					
 					//touch 
 					window.addEventListener("touchstart", function (e) {
 						this.touchStart = e.changedTouches[0].pageX;
 					}.bind(this));
 					
-
-					
 					window.addEventListener("touchend", function (e) {
 						this.touchEnd = e.changedTouches[0].pageX;
-						
-						console.log(this.touchEnd - this.touchStart);
 						
 						if((this.touchEnd - this.touchStart) > 0) {
 							this.slideLeft();
@@ -97,18 +110,7 @@ lightBox.prototype.initLightBox = function () {
 				this.putAllImages();
 
 				document.querySelector(".lightbox-exit").addEventListener("click", function() {
-
-					//set overflow for body
-					this.body.style.overflow = "auto";
-
-					//remove all lightbox
-					document.querySelector(".lightbox-background").remove();
-
-					//CLEAN
-					this.clean();
-
-					//run new instance of lightbox;
-					this.initLightBox();
+					this.close();
 				}.bind(this));
 			}
 		}.bind(this));
@@ -154,6 +156,20 @@ lightBox.prototype.putAllImages = function () {
 		}
 		
 	}
+}
+
+lightBox.prototype.close = function() {
+	//set overflow for body
+	this.body.style.overflow = "auto";
+	
+	//remove all lightbox
+	document.querySelector(".lightbox-background").remove();
+		
+	//CLEAN
+	this.clean();
+		
+	//run new instance of lightbox;
+	this.initLightBox();
 }
 
 /* CLEAN */
