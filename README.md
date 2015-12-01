@@ -50,3 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 # DEMO
 http://projects.lukaszduda.com.pl/lightbox
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/PyxelCoder/lightbox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
